@@ -57,9 +57,7 @@ client.connect(err => {
     });
     // delete user booking
     app.delete("/deleteBooking/:id", async (req, res) => {
-        const result = await allbookingCollection.deleteOne({
-            _id: ObjectId(req.params.id),
-        });
+        const result = await allbookingCollection.deleteOne({_id: ObjectId(req.params.id)});
         res.send(result);
     });
 
